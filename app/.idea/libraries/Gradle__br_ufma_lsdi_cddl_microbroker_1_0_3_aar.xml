@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: br.ufma.lsdi:cddl-microbroker:1.0.3@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7a407e07ed8d2e4275e2a14991f886b9/cddl-microbroker-1.0.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/7a407e07ed8d2e4275e2a14991f886b9/cddl-microbroker-1.0.3/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

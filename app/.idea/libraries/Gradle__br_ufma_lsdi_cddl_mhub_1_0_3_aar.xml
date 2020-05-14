@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="Gradle: br.ufma.lsdi:cddl-mhub:1.0.3@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/41a7bb21e899f10cd8c575e9506cd3e1/cddl-mhub-1.0.3/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/41a7bb21e899f10cd8c575e9506cd3e1/cddl-mhub-1.0.3/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/41a7bb21e899f10cd8c575e9506cd3e1/cddl-mhub-1.0.3/jars/libs/asper-4.9.0.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/41a7bb21e899f10cd8c575e9506cd3e1/cddl-mhub-1.0.3/jars/libs/lib.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/41a7bb21e899f10cd8c575e9506cd3e1/cddl-mhub-1.0.3/jars/libs/HxMBT.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/41a7bb21e899f10cd8c575e9506cd3e1/cddl-mhub-1.0.3/jars/libs/BioHarnessBT.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/41a7bb21e899f10cd8c575e9506cd3e1/cddl-mhub-1.0.3/jars/libs/ClientLib.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

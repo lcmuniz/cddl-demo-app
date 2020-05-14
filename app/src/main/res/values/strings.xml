@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">CDDL Demo App</string>
+    <string name="available_sensors">Sensores disponíveis:</string>
+    <string name="start">Iniciar</string>
+    <string name="stop">Parar</string>
+    <string name="messages_label">Mensagens</string>
+    <string name="clear">Limpar</string>
+    <string name="filter_label">Filtro (EPL):</string>
+    <string name="filter_button_label">Filtrar</string>
+    <string name="clear_filter_button_label">Tudo</string>
+    <string name="subscrever_sensores">Subscrever Sensores</string>
+    <string name="pub_sub_mensagem">Publicar e Subscrever Mensagem</string>
+    <string name="subscrever_no_topico">Subscrever no Tópico</string>
+    <string name="subscrever">Subscrever</string>
+    <string name="mensagem_para_publicar">Mensagem para Publicar</string>
+    <string name="publicar">Publicar</string>
+    <string name="mensagens">Mensagens Recebidas</string>
+    <string name="lsdi_logo">LSDi logo</string>
+</resources>
