@@ -20,9 +20,12 @@
 
 package br.lsdi.ufma.cddldemoapp;
 
+import android.Manifest;
+import android.content.pm.PackageManager;
 import android.hardware.Sensor;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -41,12 +44,15 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import br.pucrio.inf.lac.mhub.s2pa.technologies.internal.sensors.BatterySensor;
+import br.pucrio.inf.lac.mhub.s2pa.technologies.internal.sensors.LocationSensor;
 import br.ufma.lsdi.cddl.CDDL;
 import br.ufma.lsdi.cddl.Connection;
 import br.ufma.lsdi.cddl.ConnectionFactory;
 import br.ufma.lsdi.cddl.message.Message;
 import br.ufma.lsdi.cddl.pubsub.Subscriber;
 import br.ufma.lsdi.cddl.pubsub.SubscriberFactory;
+import br.ufma.lsdi.cddl.qos.TimeBasedFilterQoS;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -80,6 +86,8 @@ public class MainActivity extends AppCompatActivity {
         eb = EventBus.builder().build();
         eb.register(this);
 
+        setPermissions();
+
         if (savedInstanceState == null) {
             configCDDL();
         }
@@ -94,7 +102,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void configCDDL() {
 
-        String host = CDDL.startMicroBroker();
+        //String host = CDDL.startMicroBroker();
+        String host = "broker.hivemq.com";
 
         Connection connection = ConnectionFactory.createConnection();
         connection.setHost(host);
@@ -107,6 +116,7 @@ public class MainActivity extends AppCompatActivity {
 
         cddl.startService();
         cddl.startCommunicationTechnology(CDDL.INTERNAL_TECHNOLOGY_ID);
+        //cddl.startLocationSensor();
 
         subscriber = SubscriberFactory.createSubscriber();
         subscriber.addConnection(cddl.getConnection());
@@ -115,6 +125,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void onMessage(Message message) {
+
+        System.out.println("+++++++++++++++++++++");
+        System.out.println(message);
 
         handler.post(() -> {
             Object[] valor = message.getServiceValue();
@@ -180,12 +193,11 @@ public class MainActivity extends AppCompatActivity {
     private void startSelectedSensor() {
 
         String selectedSensor = spinner.getSelectedItem().toString();
+        cddl.setFilter("select * from Message where cast(serviceValue[0], int) > 50");
         cddl.startSensor(selectedSensor);
-
         subscriber.subscribeServiceByName(selectedSensor);
         currentSensor = selectedSensor;
 
-        cddl.startLocationSensor();
     }
 
     private void stopCurrentSensor() {
@@ -230,4 +242,14 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private void setPermissions() {
+
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED || ActivityCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+        }
+
+    }
 }
