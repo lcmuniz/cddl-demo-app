@@ -33,15 +33,15 @@ dependencies {
 
     implementation 'org.greenrobot:eventbus:3.1.1'
     implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.1'
-    implementation 'org.apache.commons:commons-lang3:3.5'
+    implementation 'org.apache.commons:commons-lang3:3.5' 
     implementation 'org.mapdb:mapdb:1.0.6'
     implementation 'com.lmax:disruptor:3.3.0'
     implementation 'io.netty:netty-all:4.0.25.Final'
     implementation 'com.google.android.gms:play-services-location:16.0.0'
     implementation 'com.google.code.gson:gson:2.8.2'
 
-    //implementation (group: 'br.ufma.lsdi', name: 'cddl', version: '1.0.3', ext: 'aar')
-    //implementation (group: 'br.ufma.lsdi', name: 'cddl-mhub', version: '1.0.3', ext: 'aar')
-    //implementation (group: 'br.ufma.lsdi', name: 'cddl-microbroker', version: '1.0.3', ext: 'aar')
+    //implementation (group: 'br.ufma.lsdi', name: 'cddl', version: '1.0.4', ext: 'aar')
+    //implementation (group: 'br.ufma.lsdi', name: 'cddl-mhub', version: '1.0.4', ext: 'aar')
+    //implementation (group: 'br.ufma.lsdi', name: 'cddl-microbroker', version: '1.0.4', ext: 'aar')
 
 }
